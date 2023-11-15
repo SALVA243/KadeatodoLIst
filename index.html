@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LISTE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.css">
+</head>
+
+<body>
+    <div class="content">
+        <h1>TO DO LISTE</h1>
+        <input type="text" id="input"><button>Add</button>
+        <ul id="listDonne">
+
+        </ul>
+
+    </div>
+    <script>
+        let input = document.querySelector("#input");
+        let button = document.querySelector("button");
+        let ul = document.querySelector("#listDonne");
+
+
+        button.addEventListener('click', () => {
+            if (input.value.trim()) {
+
+
+
+                /*creation de la case à cocher : input checkbox*/
+                let caseCocher = document.createElement('input');
+                caseCocher.setAttribute('type', 'checkbox');
+
+                /*creation d'un span qui va contenir la valeur saisie : input value*/
+                let spanInputSaisie = document.createElement('span');
+                spanInputSaisie.innerHTML = input.value;
+
+                /*creer les boutons delete et update*/
+                let btnUpdate = document.createElement('a');
+                let btnDelete = document.createElement('a');
+
+
+                /*texte qui s'affiche sur les boutons update et delete*/
+                btnUpdate.innerHTML = 'Update';
+                btnDelete.innerHTML = 'Delete';
+
+
+
+
+                /*creation ligne de la table pour afficher les elements*/
+
+
+                let lignelist = document.createElement('li');
+                lignelist.appendChild(caseCocher);
+                lignelist.appendChild(spanInputSaisie);
+                lignelist.appendChild(btnUpdate);
+                lignelist.appendChild(btnDelete);
+
+                ul.appendChild(lignelist);
+
+                input.value = '';
+                //  ligneT.appendChild(caseCocher);
+                //ligneT.appendChild(spanInputSaisie);
+
+                /*Charger la ligne avec ses elements à la table parent*/
+
+
+                /*Programmation du button Update, Delete, et la case à cocher*/
+
+                /* Programmation Btn Update*/
+                btnUpdate.addEventListener('click', () => {
+                    let depot = deuxiemeCol.value;
+                    let InputUpdate = document.createElement('input');
+                    InputUpdate.value = depot.value;
+
+                })
+
+                /* Programmation Btn Delete*/
+                btnDelete.addEventListener('click', () => {
+                    ul.remove();
+                })
+
+                /* Programmation Case à cocher*/
+                premierCol.addEventListener('click', () => {
+                    deuxiemeCol.classList.toggle('ligneBarre');
+
+                })
+
+
+
+            }
+        })
+    </script>
+</body>
+
+</html>

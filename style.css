@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.content {
+    background-color: darkgray;
+    width: 15%;
+    margin: 30px auto;
+    padding: 20px;
+    transition: all 0.5s ease;
+}
+
+.btnDomDelete:hover {
+    background-color: rgb(33, 31, 31);
+    color: rgb(211, 81, 81);
+    cursor: pointer;
+}
+
+.btnDomUpdate:hover {
+    background-color: rgb(33, 31, 31);
+    color: rgb(211, 81, 81);
+    cursor: pointer;
+}
+
+.ligneBarre {
+    text-decoration: line-through;
+}
